@@ -80,6 +80,7 @@
     <EmbeddedResource Include="TitleQueries.resx">
       <DependentUpon>TitleQueries.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="TitleQueries.cd" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\BooksExamples.Title.datasource" />
     <None Include="Properties\Settings.settings">

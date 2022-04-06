@@ -45,6 +45,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -56,6 +58,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Author.cs">
+      <DependentUpon>BooksDiagram.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksDiagram.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksDiagram.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksDiagram.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksDiagram.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BooksDiagram.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BooksDiagram.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DisplayAuthorsTable.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +84,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Title.cs">
+      <DependentUpon>BooksDiagram.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DisplayAuthorsTable.resx">
       <DependentUpon>DisplayAuthorsTable.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,7 +99,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EntityDeploy Include="BooksDiagram.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BooksDiagram.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BooksDiagram.edmx.diagram">
+      <DependentUpon>BooksDiagram.edmx</DependentUpon>
+    </None>
     <None Include="BooksExamples.Author1.datasource" />
+    <None Include="DisplayAuthorsTable.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -96,6 +127,21 @@
       <Project>{a631fd2a-9cda-4ec1-bc32-1ef26de9f5bf}</Project>
       <Name>BooksExamples</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BooksDiagram.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BooksDiagram.edmx</DependentUpon>
+      <LastGenOutput>BooksDiagram.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="BooksDiagram.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BooksDiagram.edmx</DependentUpon>
+      <LastGenOutput>BooksDiagram.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
