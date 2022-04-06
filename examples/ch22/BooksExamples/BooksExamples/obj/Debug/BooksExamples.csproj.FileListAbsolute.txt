@@ -1,0 +1,14 @@
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\Books.mdf
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\Books_log.ldf
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\BooksExamples.dll.config
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\BooksExamples.dll
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\BooksExamples.pdb
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\EntityFramework.dll
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\EntityFramework.SqlServer.dll
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\EntityFramework.xml
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\bin\Debug\EntityFramework.SqlServer.xml
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\obj\Debug\BooksExamples.csprojAssemblyReference.cache
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\obj\Debug\BooksExamples.csproj.CoreCompileInputs.cache
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\obj\Debug\BooksExamples.csproj.CopyComplete
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\obj\Debug\BooksExamples.dll
+D:\DESKTOP\School\computer\c#\VCSharpHTP6\examples\ch22\BooksExamples\BooksExamples\obj\Debug\BooksExamples.pdb

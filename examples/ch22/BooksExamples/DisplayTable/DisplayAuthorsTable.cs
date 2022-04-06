@@ -8,30 +8,55 @@ using System.Windows.Forms;
 
 namespace DisplayTable
 {
-   public partial class DisplayAuthorsTable : Form
-   {
-      // constructor
-      public DisplayAuthorsTable()
-      {
-         InitializeComponent();
-      }
+    public partial class DisplayAuthorsTable : Form
+    {
+        // constructor
+        public DisplayAuthorsTable()
+        {
+            InitializeComponent();
+        }
 
-      // Entity Framework DbContext                  
-      private BooksExamples.BooksEntities dbcontext =
-         new BooksExamples.BooksEntities();
+        // Entity Framework DbContext                  
+        private BooksExamples.BooksEntities dbcontext =
+           new BooksExamples.BooksEntities();
 
-      // load data from database into DataGridView
-      private void DisplayAuthorsTable_Load(object sender, EventArgs e)
-      {
-         // load Authors table ordered by LastName then FirstName
-         dbcontext.Authors
-            .OrderBy(author => author.LastName)
-            .ThenBy(author => author.FirstName)
-            .Load();
+        // load data from database into DataGridView
+        private void DisplayAuthorsTable_Load(object sender, EventArgs e)
+        {
+            // load Authors table ordered by LastName then FirstName
+            dbcontext.Authors
+               .OrderBy(author => author.LastName)
+               .ThenBy(author => author.FirstName)
+               .Load();
 
-         // specify DataSource for authorBindingSource
-         authorBindingSource.DataSource = dbcontext.Authors.Local;
-      }
+            // specify DataSource for authorBindingSource
+            authorBindingSource.DataSource = dbcontext.Authors.Local;
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            var lastNameQuery =
+                from author in dbcontext.Authors
+                where author.LastName.StartsWith(searchTextBox.Text)
+                orderby author.LastName, author.FirstName
+                select author;
+
+            authorBindingSource.DataSource = lastNameQuery.ToList();
+            authorBindingSource.MoveFirst();
+        }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            // load Authors table ordered by LastName then FirstName
+            dbcontext.Authors
+               .OrderBy(author => author.LastName)
+               .ThenBy(author => author.FirstName)
+               .Load();
+
+            // specify DataSource for authorBindingSource
+            authorBindingSource.DataSource = dbcontext.Authors.Local;
+            searchTextBox.Clear();
+        }
 
       // click event handler for the Save Button in the 
       // BindingNavigator saves the changes made to the data

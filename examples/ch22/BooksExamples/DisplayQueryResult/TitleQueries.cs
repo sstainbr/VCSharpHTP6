@@ -61,7 +61,27 @@ namespace DisplayQueryResult
 
          titleBindingSource.MoveFirst(); // move to first entry
       }
-   }
+
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            titleBindingSource.DataSource =
+            dbcontext.Titles.Local
+                .OrderBy(book => book.Title1);
+            searchTextBox.Clear();
+            titleBindingSource.MoveFirst(); // move to first entry
+
+        }
+
+        private void searchButton_Click(object sender, EventArgs e)
+        {
+            titleBindingSource.DataSource =
+            dbcontext.Titles.Local
+                .Where(
+                book => book.Title1.Contains(searchTextBox.Text))
+                .OrderBy(book => book.Title1);
+            titleBindingSource.MoveFirst(); // move to first entry
+        }
+    }
 }
 
 /**************************************************************************
